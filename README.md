@@ -1,1 +1,1 @@
-# Consumindo-API-COinMakretCap
+# Consumindo-API-CoinMaketCap
