@@ -1,0 +1,43 @@
+<html>
+<heade>
+
+<title>
+       API
+</title>
+
+</heade>
+
+<body>
+
+<script>
+
+const apikey = {
+    key: 'e53e22cd-c5f2-4f9f-8958-9914b5bb4ecd'
+}
+
+request('GET','https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/historical?CMC_PRO_API_KEY=' + apikey.key)
+.then((r1) => {
+    var x1 = JSON.parse(r1.target.responseText);
+    console.log(x1.data.quote.BTC.price);
+}).catch(err => {
+    console.log(err);
+})  
+    
+function request(method, url) {
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.onload = resolve;
+            xhr.onerror = reject;
+            xhr.send();
+        });
+}
+</script>
+
+</body>
+
+
+<html>
+
+
+
